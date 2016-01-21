@@ -1,3 +1,10 @@
+"
+" My default .vimrc file
+" @author Guilherme Toti
+"
+
+" Default settings
+
 " Configuration file for vim
 set modelines=0        " CVE-2007-2438
 
@@ -12,14 +19,10 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 
-" tab to space
 set tabstop=4
 set expandtab
-
 set autoindent
-
 set backspace=eol,start,indent
-set background=dark
 
 " show linenumber
 set nu
@@ -27,6 +30,7 @@ set nu
 " syntax highlight
 syntax enable
 colorscheme wellsokai
+set background=dark
 set cursorline
 highlight CursorLine ctermbg=237
 
@@ -51,10 +55,17 @@ augroup python
     au!
     autocmd FileType python set colorcolumn=80
 augroup END
-" let g:netrw_liststyle=3
+
 let mapleader=" "
-map <leader>k :Vexplore<cr>
-let g:netrw_winsize = 20
-map <F2> <C-W>=
-noremap YY "+y<CR>
+
+" Custom configs
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Maps
+noremap <leader>k :Vexplore<cr>
+noremap <F2> <C-W>=
+noremap YY "+y<CR>
+
+" Lets
+let g:netrw_winsize = 20
+
